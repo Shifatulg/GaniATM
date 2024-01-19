@@ -5,16 +5,22 @@ public class ATM {
     public ATM() { }
 
     public void start() {
-
+        introduce();
+        mainMenu();
     }
 
     private void introduce() {
         System.out.println("Hello" + man.getName() + "welcome to the ATM");
     }
 
-    private void mainMenu() {
-        System.out.println("Which account would you like to use, (1) checkings, (2) savings" );
-        int choice = s.nextInt();
+    private int mainMenu() {
+        System.out.println("You are currently in your" + man.getAcc().getType() + "account");
+        System.out.print("Would you like to switch accounts?");
+        String choice = s.nextLine();
+        if (choice.toLowerCase().equals("yes") || choice.toLowerCase().equals("y")) {
+            man.switchAccounts();
+            System.out.println("Switched to " + man.getAcc().getType() + "account");
+        }
         System.out.println("---------------------");
         System.out.println("1. Withdraw Money");
         System.out.println("2. Deposit money");
@@ -24,5 +30,15 @@ public class ATM {
         System.out.println("6. Change PIN");
         System.out.println("7. Exit");
         System.out.println("---------------------");
+        System.out.println("What action do you want to do: ");
+        int input = s.nextInt();
+        s.nextLine();
+        return input;
+    }
+
+    private boolean verify() {
+        System.out.print("Enter pin: ");
+        int pin = s.nextInt();
+        return man.enterPin(pin);
     }
 }

@@ -1,13 +1,13 @@
 public class Account {
     private int balance;
-    private boolean savings;
-    public Account(boolean checkings) {
-        if (checkings) {
-            savings = false;
-        } else {
-            savings = true;
-        }
+    private String type;
+    public Account(String type) {
+        this.type = type;
         balance = 0;
+    }
+
+    public String getType() {
+        return type;
     }
 
     public void withdraw(int amount) {
