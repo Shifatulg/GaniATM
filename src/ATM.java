@@ -10,12 +10,12 @@ public class ATM {
     }
 
     private void introduce() {
-        System.out.println("Hello" + man.getName() + "welcome to the ATM");
+        System.out.println("Hello " + man.getName() + " welcome to the ATM");
     }
 
     private int mainMenu() {
-        System.out.println("You are currently in your" + man.getAcc().getType() + "account");
-        System.out.print("Would you like to switch accounts?");
+        System.out.println("You are currently in your " + man.getAcc().getType() + " account");
+        System.out.print("Would you like to switch accounts? ");
         String choice = s.nextLine();
         if (choice.toLowerCase().equals("yes") || choice.toLowerCase().equals("y")) {
             man.switchAccounts();
