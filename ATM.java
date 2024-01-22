@@ -2,12 +2,13 @@ import java.util.Scanner;
 
 public class ATM {
     private static final Scanner s = new Scanner(System.in);
-    Customer man = new Customer();
+    private Customer man;
     private int accID;
     private int secID;
 
     public ATM() {
       // starts at one because the ID number starts at one
+      man = new Customer();
       accID = 1;
       secID = 1;
     }
